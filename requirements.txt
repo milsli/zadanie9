@@ -2,5 +2,5 @@ openai
 langfuse
 streamlit
 python-dotenv
-pycaret 3.3.2;
+pycaret
 boto3
