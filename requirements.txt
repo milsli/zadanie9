@@ -3,4 +3,3 @@ langfuse
 streamlit
 python-dotenv
 boto3
-pycaret.regression
