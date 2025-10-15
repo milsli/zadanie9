@@ -1,6 +1,5 @@
 import streamlit as st
 import boto3
-# from openai import OpenAI
 from dotenv import load_dotenv
 import os
 import json
@@ -27,8 +26,8 @@ load_dotenv()
 #     env["AWS_SECRET_ACCESS_KEY"] = st.secrets["AWS_SECRET_ACCESS_KEY"]
 
 def download():  
-    s3 = boto3.client('s3', endpoint_url=env["AWS_ENDPOINT_URL_S3"], aws_access_key_id=env["AWS_ACCESS_KEY_ID"],
-    aws_secret_access_key=env["AWS_SECRET_ACCESS_KEY"])
+    s3 = boto3.client('s3', endpoint_url=os.environ["AWS_ENDPOINT_URL_S3"], aws_access_key_id=os.environ["AWS_ACCESS_KEY_ID"],
+    aws_secret_access_key=os.environ["AWS_SECRET_ACCESS_KEY"])
 
     BUCKET_NAME = "phisicsvideo" 
     response = s3.list_objects_v2(Bucket=BUCKET_NAME, Prefix='zadanie9')
@@ -51,8 +50,6 @@ def download():
 @observe()
 def getMMLData(dane):
     client = get_openai_client()
-
-
     response = client.chat.completions.create(
         model="gpt-4o-mini",
         temperature=0.5,
