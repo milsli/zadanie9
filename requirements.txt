@@ -1,5 +1,5 @@
 openai
-langfuse
+langfuse==2.51.4
 streamlit
 python-dotenv
 pycaret==3.3.2
