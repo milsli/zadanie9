@@ -12,7 +12,6 @@ from langfuse.openai import OpenAI
 def get_openai_client():
     return OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
-
 # env = dotenv_values(".env")
 load_dotenv()
 
@@ -109,7 +108,3 @@ with st.sidebar:
 
         prediction = predict_model(pipeline, data=test_df)
         st.text(prediction)
-
-
-
-        
